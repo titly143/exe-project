@@ -5,7 +5,7 @@ $(function(){
      slidesToScroll: 1,
      autoplay:true,
      autoplaySpeed: 1000,
-     fade:true,
+     fade:false,
      speed:1000,
      arrows:true,
      prevArrow:'.start',
@@ -90,13 +90,13 @@ $(function(){
    });
    //animation scroll js
    var html_body = $('html, body');
-   $('nav a').on('click', function () {
+   $('a').on('click', function () {
        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
            var target = $(this.hash);
            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
            if (target.length) {
                html_body.animate({
-                   scrollTop: target.offset().top - 111
+                   scrollTop: target.offset().top - 64
                }, 1000);
                return false;
            }
